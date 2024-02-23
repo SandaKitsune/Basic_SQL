@@ -1,17 +1,20 @@
 # Basic_SQL
 Here you can find a spreadsheet with basic SQL codes: 
-
 https://docs.google.com/spreadsheets/d/1mzyoxoEZtCKqkX7cdjQAFhxtj8362q-xzJyT6JN1To4/edit#gid=389760228
-
 Examples: 
 
 1.
 
 SELECT p.ProductID, p.Name, p.ProductNumber, p.Size, p.Color , ps.ProductSubcategoryID, ps.Name as SubCategory, pc.Name as Category, p.ListPrice, p.SellEndDate
+
 FROM `adwentureworks_db.product` p
+
 JOIN `adwentureworks_db.productsubcategory` ps ON ps.ProductSubcategoryID = p.ProductSubcategoryID
+
 JOIN `adwentureworks_db.productcategory` pc ON ps.ProductCategoryID = pc.ProductCategoryID
+
 WHERE p.ListPrice > 2000 AND p.SellEndDate is NULL AND pc.Name = 'Bikes'
+
 ORDER BY p.ListPrice;
 
 2.
