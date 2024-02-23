@@ -20,7 +20,7 @@ WHERE p.ListPrice > 2000 AND p.SellEndDate is NULL AND pc.Name = 'Bikes'
 ORDER BY p.ListPrice;
 
 2.
-SELECT DISTINCT sd.SalesOrderID, sd.OrderQty,sd.UnitPrice,sd.LineTotal, sd.ProductID, sd.SpecialOfferID, sp.ModifiedDate, so.Category, so.Description, sp.Rowguid
+SELECT DISTINCT(sd.SalesOrderID), sd.OrderQty,sd.UnitPrice,sd.LineTotal, sd.ProductID, sd.SpecialOfferID, sp.ModifiedDate, so.Category, so.Description, sp.Rowguid
 
 FROM `adwentureworks_db.specialofferproduct`sp
 
